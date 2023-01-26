@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  background-color: #fff;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+}
+body .gradient_background {
+  background-image: url(images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 33%;
+  position: relative;
+}
+body .gradient_background .card {
+  width: 447px;
+  height: 245px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .gradient_background .card_front {
+  background-image: url(images/bg-card-front.png);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 15vh;
+  left: 10vw;
+  z-index: 2;
+}
+body .gradient_background .card_front img {
+  width: 84px;
+  height: 47px;
+}
+body .gradient_background .card_front .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body .gradient_background .card_front .container .number {
+  font-size: 2rem;
+}
+body .gradient_background .card_front .container .container_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+body .gradient_background .card_back {
+  background-image: url(images/bg-card-back.png);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  bottom: 15vh;
+  left: 17vw;
+}
+body .gradient_background .card_back p {
+  margin-right: 55px;
+}
+body .form_container {
+  width: 67%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .form_container form {
+  width: 45%;
+}
+body .form_container form .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 6%;
+}
+body .form_container form .container .form_group {
+  width: 47%;
+}
+body .form_container form .form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+body .form_container form .form_group .exp_date {
+  display: flex;
+  gap: 10%;
+  justify-content: space-between;
+  max-width: 50%;
+}
+body .form_container form .form_group .exp_date input {
+  width: auto;
+  max-width: 95%;
+}
+body .form_container form .form_group #cvc {
+  max-width: 100%;
+}
+body .form_container form .form_group label {
+  color: hsl(278deg, 68%, 11%);
+  text-transform: uppercase;
+  font-size: 15px;
+}
+body .form_container form .form_group input {
+  padding: 1rem;
+  border-radius: 8px;
+  border: solid 1.5px hsl(270deg, 3%, 87%);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  color: hsl(278deg, 68%, 11%);
+}
+body .form_container form .form_group input::-moz-placeholder {
+  color: hsl(279deg, 6%, 55%);
+}
+body .form_container form .form_group input:-ms-input-placeholder {
+  color: hsl(279deg, 6%, 55%);
+}
+body .form_container form .form_group input::placeholder {
+  color: hsl(279deg, 6%, 55%);
+}
+body .form_container form .form_group input:focus {
+  outline: none;
+  border: solid 1.5px #600594;
+}
+body .form_container form .form_group .error {
+  color: hsl(0deg, 100%, 66%);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+body .form_container form button {
+  width: 100%;
+  border: none;
+  background-color: hsl(278deg, 68%, 11%);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+body .form_container form button:hover {
+  cursor: pointer;
+  background-color: hsl(279deg, 6%, 55%);
+}
+
+@media screen and (max-width: 1200px) {
+  body .gradient_background .card {
+    width: 350px;
+    height: 192px;
+  }
+  body .gradient_background .card_front {
+    padding: 20px;
+    top: 25vh;
+    left: 5vw;
+  }
+  body .gradient_background .card_front img {
+    width: 60px;
+    height: 34px;
+  }
+  body .gradient_background .card_front .container .number {
+    font-size: 26px;
+  }
+  body .gradient_background .card_back {
+    bottom: 25vh;
+    left: 8vw;
+  }
+  body .gradient_background .card_back p {
+    margin-right: 45px;
+  }
+  body .form_container form {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  body .gradient_background {
+    height: 33%;
+    width: 100%;
+  }
+  body .gradient_background .card {
+    width: 300px;
+    height: 164px;
+  }
+  body .gradient_background .card_front {
+    padding: 15px;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-75%);
+  }
+  body .gradient_background .card_front img {
+    width: 45px;
+    height: 26px;
+  }
+  body .gradient_background .card_front .container .number {
+    font-size: 22px;
+  }
+  body .gradient_background .card_back {
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-25%);
+  }
+  body .gradient_background .card_back p {
+    margin-right: 40px;
+  }
+  body .form_container {
+    margin: auto;
+  }
+  body .form_container form {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  body .gradient_background .card {
+    width: 250px;
+    height: 137px;
+  }
+  body .gradient_background .card_front {
+    padding: 10px;
+    top: 23vh;
+    left: 50%;
+    transform: translateX(-75%);
+  }
+  body .gradient_background .card_front img {
+    width: 35px;
+    height: 20px;
+  }
+  body .gradient_background .card_front .container .number {
+    font-size: 20px;
+  }
+  body .gradient_background .card_back {
+    top: 14vh;
+    left: 50%;
+    transform: translateX(-25%);
+  }
+  body .gradient_background .card_back p {
+    margin-right: 30px;
+  }
+  body .form_container {
+    margin: auto;
+  }
+  body .form_container form {
+    width: 120%;
+  }
+}/*# sourceMappingURL=style.css.map */

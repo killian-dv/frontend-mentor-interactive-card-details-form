@@ -5,39 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Interactive card details form</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
+  <div class="gradient_background">
+    <div class="card_front card">
+      <img src="images/card-logo.svg" alt="circle">
+      <div class="container">
+        <p class="number" id="card_number">0000 0000 0000 0000</p>
+        <div class="container_bottom">
+          <p id="cardholder_name">Jane Appleseed</p>
+          <p><span id="exp_date_M">00</span>/<span id="exp_date_Y">00</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="card_back card">
+      <p id="cvc">000</p>
+    </div>
+  </div>
+  <div class="form_container">
+    <form action="">
+      <div class="form_group">
+        <label for="cardholder_name">Cardholder Name</label>
+        <input type="text" id="cardholder_name_input" placeholder="e.g. Jane Appleseed">
+      </div>
+      <div class="form_group">
+        <label for="card_number_input">Card Number</label>
+        <input id="card_number_input" type="text" minlength="19" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
+      </div>
+      <div class="container">
+        <div class="form_group">
+          <label for="exp_date">Exp. Date (MM/YY)</label>
+          <div class="exp_date">
+            <input type="text" id="exp_date_M_input" placeholder="MM" minlength="2" maxlength="2">
+            <input type="text" id="exp_date_Y_input" placeholder="YY" minlength="2" maxlength="2">
+          </div>
+        </div>
+        <div class="form_group">
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc_input" placeholder="123" minlength="3" maxlength="3">
+        </div>
+      </div>
+      <button id="submit" type="submit">Confirm</button>
+    </form>
+  </div>
   
+  <script>
+    // fonction pour afficher dynamiquement le nom de la personne sur la carte
+    $("#cardholder_name_input").on("input", function() {
+      var cardNumber = $(this).val();
+      $("#cardholder_name").text(cardNumber);
+    });
+    // fonction pour afficher dynamiquement les numéros de cb sur la carte
+    $("#card_number_input").on("input", function() {
+      var cardNumber = $(this).val();
+      $("#card_number").text(cardNumber);
+    });
+    // fonction pour afficher dynamiquement le mois sur la carte
+    $("#exp_date_M_input").on("input", function() {
+      var cardNumber = $(this).val();
+      $("#exp_date_M").text(cardNumber);
+    });
+    // fonction pour afficher dynamiquement l'année sur la carte
+    $("#exp_date_Y_input").on("input", function() {
+      var cardNumber = $(this).val();
+      $("#exp_date_Y").text(cardNumber);
+    });
+    // fonction pour afficher dynamiquement le cvc sur la carte
+    $("#cvc_input").on("input", function() {
+      var cardNumber = $(this).val();
+      $("#cvc").text(cardNumber);
+    });
 
+    
+    
+    
+    
+    
+    $("#card_number_input").keypress(function (e) {
+    if ((e.which < 48 || e.which > 57) && (e.which !== 8) && (e.which !== 0)) {
+        return false;
+    }
+
+    return true;
+});
+  </script>
 </body>
 </html>
